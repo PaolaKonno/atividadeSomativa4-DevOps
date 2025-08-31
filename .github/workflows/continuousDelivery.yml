@@ -23,6 +23,6 @@ jobs:
     steps:
       - uses: actions/download-artifact@v5
         with:
-          name: projetozipado
+          name: projetozipado.zip
       - name: Display structure of downloaded files
         run: ls -R
