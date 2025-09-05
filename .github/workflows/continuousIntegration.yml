@@ -14,3 +14,14 @@ jobs:
         uses: advanced-security/python-lint-code-scanning-action@v1
         with:
             linter: pylint
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+      - uses: actions/checkout@v4
+
+      - name: Set up QEMU
+      - uses: docker/setup-qemu-actions@v3
+
+      - name: Set up Docker Buildx
+      - uses: docker/setup-buildx-actions@v3
