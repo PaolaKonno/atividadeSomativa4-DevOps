@@ -9,6 +9,9 @@ class Estudante(BaseModel) :
     curso: str
     ativo: bool
 
+def create_estudante(estudante: Estudante):
+    return estudante
+
 @app.get("/")
 def root():
     return {"status": "ok", "try": ["/helloworld", "/teste1", "/docs"]}
