@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be35819e-d3c0-475d-8933-f2a3c0a44637" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/continuousIntegration.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/continuousIntegration.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/pytest_cache/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/pytest_cache/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/test/pytest.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/pytest_cache/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
-    </list>
+    <list default="true" id="be35819e-d3c0-475d-8933-f2a3c0a44637" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +32,9 @@
     &quot;accountId&quot;: &quot;834ed60b-1218-4c0f-9213-672c91cd23d7&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
