@@ -9,6 +9,12 @@ class Estudante(BaseModel) :
     curso: str
     ativo: bool
 
+@app.get("/helloword")
+async def root():
+    return {"message": "Hello World"}
+
+
+@app.post("/estudantes/cadastro")
 def create_estudante(estudante: Estudante):
     return estudante
 
