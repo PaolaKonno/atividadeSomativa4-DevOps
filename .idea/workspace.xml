@@ -5,6 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be35819e-d3c0-475d-8933-f2a3c0a44637" name="Changes" comment="" />
+    <list default="true" id="be35819e-d3c0-475d-8933-f2a3c0a44637" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/continuousDelivery.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/continuousDelivery.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/continuousIntegration.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/continuousIntegration.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,6 +81,7 @@
       <updated>1756420531529</updated>
       <workItem from="1756420532659" duration="2451000" />
       <workItem from="1756940265973" duration="16535000" />
+      <workItem from="1756940265973" duration="18760000" />
     </task>
     <servers />
   </component>
