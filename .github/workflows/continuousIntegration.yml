@@ -1,41 +1,40 @@
-name: CI/CD
+name: Continuous Integration
 
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  deliver:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
 
-      - name: Simular Continuous Delivery (empacotar artefatos)
-        uses: actions/upload-artifact@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          name: build-artifacts
-          path: |
-            **/*.py
-            README.md
+          python-version: '3.13'
 
-  deploy:
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          # The next line is added to ensure async tests run correctly
+          pip install pytest-asyncio
+
+      - name: Run tests with pytest
+        run: |
+          pytest test/test.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+
+  build-and-push-docker:
     runs-on: ubuntu-latest
-    needs: deliver
-    steps:
-      - name: Baixar artefatos
-        uses: actions/download-artifact@v4
-        with:
-          name: build-artifacts
-          path: ./artifact
-
-      - name: Listar arquivos baixados
-        run: ls -R
-
-  docker:
-    runs-on: ubuntu-latest
-    needs: deliver
+    needs: test
+    if: success()
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -46,54 +45,16 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Set up Docker Builx
-        uses: docker/setup-buildx-action@v3
-      - name: Build
-        uses: docker/build-push-action@v6
-
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
         with:
-          context: .
-          push: false
-          tags: user/app:latest
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push image
+      - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
           platforms: linux/amd64
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/app:latest
-  baixar:
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pytest pytest-cov pytest-asyncio  # <--- Adicione aqui!
-      - name: Test with pytest
-        run: |
-          pytest --cov=com --junitxml=junit/test-results.xml
-  testes:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.13'
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - name: Test with pytest
-      run: |
-        pip install pytest pytest-cov
-        pytest test/test.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
-
-
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/seu-app:latest
