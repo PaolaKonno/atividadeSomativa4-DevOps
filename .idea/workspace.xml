@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be35819e-d3c0-475d-8933-f2a3c0a44637" name="Changes" comment="" />
+    <list default="true" id="be35819e-d3c0-475d-8933-f2a3c0a44637" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/continuousIntegration.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/continuousIntegration.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/pytest_cache/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/pytest_cache/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/test/pytest.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/pytest_cache/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,6 +69,7 @@
       <recent name="C:\GitHub\atividadeSomativa4-DevOps" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\GitHub\atividadeSomativa4-DevOps\test" />
       <recent name="C:\GitHub\atividadeSomativa4-DevOps\test\pytest_cache" />
       <recent name="C:\GitHub\atividadeSomativa4-DevOps\src" />
     </key>
