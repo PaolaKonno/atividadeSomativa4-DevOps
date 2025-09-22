@@ -83,4 +83,5 @@ jobs:
         pip install pytest pytest-cov
         pytest test/test.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
 
-
+    - name: Run tests
+      run: pytest -q --disable-warnings --maxfail=1

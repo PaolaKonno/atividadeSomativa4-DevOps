@@ -9,10 +9,6 @@ class Estudante(BaseModel) :
     curso: str
     ativo: bool
 
-@app.get("/helloword")
-async def root():
-    return {"message": "Hello World"}
-
 
 @app.post("/estudantes/cadastro")
 def create_estudante(estudante: Estudante):
@@ -20,11 +16,7 @@ def create_estudante(estudante: Estudante):
 
 @app.get("/")
 def root():
-    return {"status": "ok", "try": ["/helloworld", "/teste1", "/docs"]}
-
-@app.get("/helloworld")
-async def read_root():
-    return {"Hello": "World"}
+    return {"message": "Hello World"}
 
 @app.get("/funcaoteste")
 
