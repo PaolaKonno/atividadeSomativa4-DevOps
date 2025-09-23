@@ -5,13 +5,9 @@ def test_create_estudante():
     estudante_teste = Estudante(name= "Paola", curso= "Curso 1", ativo=False)
     assert estudante_teste == create_estudante(estudante_teste)
 
-
 async def test_create_estudante():
     def test_root():
         assert root() == {"message": "Hello World"}
-
-
-# http://127.0.0.1:8000/teste1
 
 async def test_funcaoteste():
     assert funcaoteste() == {"teste" : True, "num_aleatorio": random.randint(1,1000)}
@@ -21,7 +17,6 @@ async def test_funcaoteste():
 
 async def cadastro(estudante: Estudante):
     return estudante
-
 
 async def teste_update_estudante_negativo():
     assert not update_estudante(-5)
