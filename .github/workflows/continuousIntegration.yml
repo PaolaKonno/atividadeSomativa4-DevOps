@@ -29,6 +29,6 @@ jobs:
 
       - name: Run tests with pytest
         run: |
-          pip install pytest pytest-cov
+          pip install pytest pytest-cov pytest-asyncio
           pytest test/teste.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
 

@@ -3,10 +3,12 @@ from unittest.mock import patch
 
 def test_create_estudante():
     estudante_teste = Estudante(name= "Paola", curso= "Curso 1", ativo=False)
-    assert estudante_teste == create_estudante
+    assert estudante_teste == create_estudante(estudante_teste)
 
-def test_root():
-    assert root() == {"message": "Hello World"}
+
+async def test_create_estudante():
+    def test_root():
+        assert root() == {"message": "Hello World"}
 
 
 # http://127.0.0.1:8000/teste1
