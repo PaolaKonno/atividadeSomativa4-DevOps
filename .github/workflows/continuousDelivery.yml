@@ -1,8 +1,9 @@
 name: Continuous Delivery
+
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches: [ "main" ]
+
 jobs:
   deliver:
     runs-on: ubuntu-latest
@@ -10,59 +11,49 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
 
-      - name: Simulando Continuous Delivery
+      - name: Upload project files
         uses: actions/upload-artifact@v4
         with:
-            name: projetozipado.zip
-            path: |
-              **.py
-              README.md
+          name: projeto-zipado
+          path: |
+            **/*.py
+            README.md
+
   deploy:
     runs-on: ubuntu-latest
     needs: deliver
     steps:
-      - uses: actions/download-artifact@v5
+      - name: Download artifact
+        uses: actions/download-artifact@v4
         with:
-          name: projetozipado.zip
+          name: projeto-zipado
+          path: ./dist
+
       - name: Display structure of downloaded files
-        run: ls -R
+        run: ls -R ./dist
+
   docker:
     runs-on: ubuntu-latest
     needs: deliver
     steps:
       - name: Checkout
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Set up QEMU
-      - uses: docker/setup-qemu-actions@v3
+        uses: docker/setup-qemu-action@v3
 
       - name: Set up Docker Buildx
-      - uses: docker/setup-buildx-actions@v3
+        uses: docker/setup-buildx-action@v3
 
-      - name: Login to Docket Hub
+      - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-    -
-        name: Checkout
-        uses: actions/checkout@v4
-    -
-       name: Set up QEMU
-       uses: docker/setup-qemu-actions@v3
-    -
-       name: Set up Docker Buildx
-       uses: docker/setup-buildx-actions@v3
-    -
-       name: Login to Docket Hub
-       uses: docker/login-action@v3
-       with:
-          username: ${{secrets.DOCKERHUB_USERNAME}}
-          password: $${{secrets.DOCKERHUB_TOKEN}}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-    -  name: Build and push
-       uses: docker/build-push-action@v6
-       with:
+          context: .
           push: true
-          tags: user/app:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/app:latest
