@@ -35,6 +35,6 @@ def test_delete_estudante_negativo():
     assert not result
 
 def test_delete_estudante_positivo():
-    result = delete_estudante(10)
+    result = delete_estudante(5)
     yield result
     assert not result
