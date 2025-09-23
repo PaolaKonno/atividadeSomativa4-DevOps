@@ -73,7 +73,8 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip test
+
+          pip install pytest-asyncio
 
       - name: Test with pytest
         run: |
