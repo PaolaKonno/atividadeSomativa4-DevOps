@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="be35819e-d3c0-475d-8933-f2a3c0a44637" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.github/workflows/continuousIntegration.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/continuousIntegration.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/test/pytest.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +56,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "discord-integration",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/GitHub/atividadeSomativa4-DevOps",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

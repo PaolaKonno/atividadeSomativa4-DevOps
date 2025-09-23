@@ -5,6 +5,7 @@ def test_root():
     assert root() == {"Hello World!"}
 
 def test_funcaoteste():
+
     with patch('random.randint', return_value=12345):
         result = funcaoteste()
 
@@ -15,6 +16,7 @@ def test_create_estudante():
     assert estudante_teste == create_estudante(estudante_teste)
 
 def test_update_estudante_negativo():
+
     assert not update_estudante(-5)
 
 def test_update_estudante_positivo():
