@@ -1,3 +1,6 @@
+pytest
+pytest-cov
+pytest-asyncio
 fastapi==0.116.1
 pydantic~=2.8.2
-pytest
+httpx   # opcional, mas muito usado em testes com FastAPI
